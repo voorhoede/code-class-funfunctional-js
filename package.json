@@ -1,0 +1,11 @@
+{
+  "name": "code-class-funfunctional-js",
+  "version": "1.0.0",
+  "description": "Code class about functional programming in at De Voorhoede.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voorhoede/code-class-funfunctional-js.git"
+  },
+  "author": "Selwyn <talk@selwyn.cc> (https://selwyn.cc/)",
+  "license": "ISC"
+}

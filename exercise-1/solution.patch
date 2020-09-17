@@ -1,0 +1,21 @@
+--- a/exercise-1/tunes.js
++++ b/exercise-1/tunes.js
+@@ -8,6 +8,7 @@ import {
+   addIndex,
+   last,
+   add,
++  tap,
+ } from 'ramda';
+ import * as Tone from 'tone';
+
+@@ -30,8 +31,8 @@ const parseDuration = pipe(
+
+ const parseTime = (note, index, notes) => notes
+   .slice(0, index)
+-  // map over the values with `parseDuration` and then `Time`
+-  // bonus, log the output before calling reduce with Ramda's `tap`
++  .map(pipe(parseDuration, Time))
++  .map(tap(console.log))
+   .reduce(add, 0);
+
+ const arrayMap = addIndex(map);

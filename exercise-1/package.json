@@ -1,0 +1,13 @@
+{
+  "name": "exercise-1",
+  "scripts": {
+    "prestart": "npm ci",
+    "start": "snowpack dev"
+  },
+  "devDependencies": {
+    "snowpack": "^2.11.1"
+  },
+  "dependencies": {
+    "ramda": "^0.27.0"
+  }
+}

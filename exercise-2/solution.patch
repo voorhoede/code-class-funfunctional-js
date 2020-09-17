@@ -1,0 +1,27 @@
+--- a/exercise-2/post-dog.js
++++ b/exercise-2/post-dog.js
+@@ -3,10 +3,8 @@
+ const { createDocumentClient } = require('./database');
+ const lambdaWrapper = require('./lambda-wrapper');
+
+-const createPostDog = ({ body }) => {
+-    const documentClient = createDocumentClient();
+-
+-    return documentClient
++const createPostDog = documentClient => ({ body }) => (
++    documentClient
+         .put({
+             TableName: 'dogs',
+             Item: body,
+@@ -15,9 +13,9 @@ const createPostDog = ({ body }) => {
+             statusCode: 200,
+             body: { createdType: 'dog' },
+         }))
+-};
++);
+
+ module.exports = {
+     createPostDog,
+-    handler: lambdaWrapper(/* handler for deployment */),
++    handler: lambdaWrapper(createPostDog(createDocumentClient())),
+ };

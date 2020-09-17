@@ -1,0 +1,20 @@
+--- a/exercise-3/tupperware.js
++++ b/exercise-3/tupperware.js
+@@ -2,14 +2,14 @@ import { render, h } from 'preact';
+ import { useState } from 'preact/hooks';
+ import { html } from 'htm/preact';
+
+-const { pipe, match, map, fromMaybe } = window.sanctuary;
++const { pipe, match, chain, map, fromMaybe } = window.sanctuary;
+
+-const tap = f => v => {};
++const tap = f => v => { f(v); return v; };
+
+ // taken from https://github.com/voorhoede/vuepress-paper/blob/c89f41b05b2d111c1f683b3d07b526106394b624/src/url-matchers.js#L5
+ const getYoutubeUrlId = pipe([
+   match(/^https:\/\/w*\.*youtube\.com\/watch\?v=(\w{11})/),
+-  map(match => match.groups[0]),
++  chain(match => match.groups[0]),
+   tap(console.log),
+ ]);
+
