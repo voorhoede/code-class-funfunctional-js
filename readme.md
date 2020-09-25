@@ -4,7 +4,7 @@
 
 ## Setup
 ```sh
-git clone git@github.com:Siilwyn/code-class-funfunctional-js.git
+git clone git@github.com:voorhoede/code-class-funfunctional-js.git
 cd code-class-funfunctional-js
 ```
 
