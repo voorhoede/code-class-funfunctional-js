@@ -8,6 +8,7 @@
     "snowpack": "^2.11.1"
   },
   "dependencies": {
-    "ramda": "^0.27.0"
+    "ramda": "^0.27.0",
+    "tone": "^14.7.39"
   }
 }
